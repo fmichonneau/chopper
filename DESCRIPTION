@@ -11,5 +11,5 @@ Depends:
     ape (>= 3.0-11)
 License: GPL (>= 2)
 LazyData: true
-URL: https://bitbucket.org/fmichonneau/seqManagement
-BugReports: https://bitbucket.org/fmichonneau/seqManagement/issues
+URL: https://github.com/fmichonneau/seqManagement
+BugReports: https://github.com/fmichonneau/seqManagement/issues
