@@ -1,0 +1,38 @@
+\name{checkInternalGaps}
+\alias{checkInternalGaps}
+\title{Check for internal gaps in a DNA sequence.}
+\usage{
+checkInternalGaps(file, format = "fasta", quiet = TRUE, ...)
+}
+\arguments{
+  \item{file}{path and file name for a DNA alignment.}
+
+  \item{format}{format of the DNA alignment.}
+
+  \item{quiet}{if FALSE, outputs as messages the list of
+  gaps found in the sequences.}
+
+  \item{...}{additional arguments to be passed to
+  ape:::read.dna}
+}
+\value{
+If there are no internal gaps, the function returns a
+zero-length integer vector. Otherwise, if quiet=TUE, the
+function returns a named vector that indicates the position
+in the alignment of the internal gaps for each sequence
+that has one or more internal gaps, if quiet=FALSE, this
+vector is returned invisibly in addition of the messages.
+}
+\description{
+Check for internal gaps.
+}
+\details{
+This function takes a DNA alignment and looks for internal
+gaps (gaps in the middle of a sequence). For protein-coding
+DNA sequences, these indicate that the original file (e.g.,
+trace files) need to be inspected closely.
+}
+\author{
+Francois Michonneau
+}
+

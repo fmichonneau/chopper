@@ -1,0 +1,15 @@
+Package: seqManagement
+Title: seqManagement -- an R package for alignment manipulation and data
+    preparation for common phylogenetic analyses
+Description: Suite of functions to manipulate sequences and alignment
+    to facilate and automate data preparation.
+Version: 0.1
+Authors@R: person("Francois", "Michonneau", role=c("aut", "cre"),
+    email="francois.michonneau@gmail.com")
+Depends:
+    R (>= 3.0.2),
+    ape (>= 3.0-11)
+License: GPL (>= 2)
+LazyData: true
+URL: https://bitbucket.org/fmichonneau/seqManagement
+BugReports: https://bitbucket.org/fmichonneau/seqManagement/issues

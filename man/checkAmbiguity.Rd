@@ -1,0 +1,40 @@
+\name{checkAmbiguity}
+\alias{checkAmbiguity}
+\title{Check for ambiguities in a DNA sequence}
+\usage{
+checkAmbiguity(file, format = "fasta", quiet = FALSE, Namb = TRUE, ...)
+}
+\arguments{
+  \item{file}{path and file name for a DNA alignment.}
+
+  \item{format}{format of the DNA alignment}
+
+  \item{Namb}{should Ns be considered ambiguities?}
+
+  \item{quiet}{if FALSE, outputs as messages the
+  ambiguities found}
+
+  \item{...}{additional arguments to be passed to
+  ape:::read.dna}
+}
+\value{
+If there are no ambiguities, the function returns a
+zero-length integer vector. Otherwise, if quiet=TRUE, the
+function returns a named vector that indicates the position
+in the alignment of the ambiguities for each sequence that
+has one or more ambiguities; if quiet=FALSE, this vector is
+returned invisibly in addition of the messages.
+}
+\description{
+Check for ambiguities or other characters that are not
+allowed in haplotype sequences.
+}
+\details{
+This function takes a DNA alignment and looks for
+characters in the sequence that are not A, C, T, G, -, ?
+(and possibly N). It ignores case.
+}
+\author{
+Francois Michonneau
+}
+

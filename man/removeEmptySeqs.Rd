@@ -1,0 +1,47 @@
+\name{removeEmptySeqs}
+\alias{removeEmptySeqs}
+\title{Remove empty sequences}
+\usage{
+removeEmptySeqs(file, output, formatin = "fasta", formatout = "fasta",
+  quiet = FALSE, gap = "?", ...)
+}
+\arguments{
+  \item{file}{path and file name for a DNA alignment}
+
+  \item{output}{path and file name of the alignment with
+  the missing data removed. If missing, the original file
+  is overwritten, with an a posteriori warning, unless
+  quiet=TRUE.}
+
+  \item{formatin}{format of the alignment to check (to be
+  passed to ape:::read.dna)}
+
+  \item{formatout}{format of the alignemnt to write (to be
+  passed to ape:::write.dna)}
+
+  \item{quiet}{If FALSE, no warning is issued to indicate
+  that the original file has been overwritten.}
+
+  \item{gap}{character in the sequence to be considered as
+  missing data}
+
+  \item{...}{additional arguments to be passed to
+  ape:::read.dna.}
+}
+\value{
+TRUE if function succeedeed, but mostly used for its side
+effect of creating a new alignment file.
+}
+\description{
+Removes empty sequences from an alignment
+}
+\details{
+This function takes an alignemnt, and remove sequences that
+only contains \dQuote{?}. This function can read the same
+type of alignment files as ape:::read.dna, and output the
+same formats as ape:::write.dna
+}
+\author{
+Francois Michonneau
+}
+
