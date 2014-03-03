@@ -1,3 +1,8 @@
+
+
+[![Build Status](https://travis-ci.org/fmichonneau/seqManagement.png?branch=master)](https://travis-ci.org/fmichonneau/seqManagement.png)
+
+
 # seqManagement
 
 seqManamgement is a collection of tools to help manipulate and format alignment files to be used for phylogenetic analyses.
