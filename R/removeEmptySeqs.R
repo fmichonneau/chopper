@@ -2,8 +2,8 @@
 ##' Removes empty sequences from an alignment
 ##'
 ##' This function takes an alignemnt, and remove sequences that only
-##' contains \dQuote{?}. This function can read the same type of
-##' alignment files as ape:::read.dna, and output the same formats as
+##' contains gaps. This function can read the same type of alignment
+##' files as ape:::read.dna, and output the same formats as
 ##' ape:::write.dna
 ##' @title Remove empty sequences 
 ##' @param file path and file name for a DNA alignment
@@ -19,6 +19,7 @@
 ##' @return TRUE if function succeedeed, but mostly used for its side
 ##' effect of creating a new alignment file.
 ##' @author Francois Michonneau
+##' @export
 removeEmptySeqs <- function(file, output, formatin="fasta", formatout="fasta",
                             quiet=FALSE, gap="?", ...) {
     

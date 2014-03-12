@@ -12,6 +12,7 @@
 ##' @return TRUE if the function succeeded, and writes the
 ##' \sQuote{output} file where specified.
 ##' @author Francois Michonneau
+##' @export
 alg2Csv <- function(file, output, format="fasta") {
     alg <- read.dna(file=file, format=format, as.character=TRUE)
     if (file.exists(output)) stop(output, " already exists.")

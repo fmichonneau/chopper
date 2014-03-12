@@ -20,8 +20,8 @@
 ##' @param create.conc if TRUE create the concatenated file, if FALSE
 ##' usefule to just check things out or only create partition file
 ##' @param standardize not needed if alignments created by
-##' \sQuote{mergeSeq}, otherwise make sure that alignments for
-##' individual markers all share the same names
+##' \sQuote{mergeSeq}. Otherwise the alignments names are standardized
+##' for each of the individual markers by generating empty sequences.
 ##' @param ... further arguments to be passed to write.dna for the
 ##' output file
 ##' @return This function is used for its side effect of creating an
@@ -29,6 +29,7 @@
 ##' create a partition file that can added at the end of the alignment
 ##' to specify where each marker starts and ends.
 ##' @author Francois Michonneau
+##' @export
 ##' @examples
 ##' \dontrun{
 ##' concatenateAlignments(pattern="^20121017-112755.+afa$", path="/tmp/seq", output="/tmp/seq/20121017.impatiens.fas", partition="/tmp/seq/20121017.impatiens.part", partition.format="nexus", colsep="", colw=10000)

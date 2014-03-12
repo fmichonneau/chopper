@@ -8,6 +8,7 @@
 ##' @return TRUE if function worked, nothing otherwise. Used for its
 ##' side effect of creating a file.
 ##' @author Francois Michonneau
+##' @export
 dealign <- function(file, output) {
     
     fContent <- scan(file=file, what="character", sep="\n")

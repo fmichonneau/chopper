@@ -22,6 +22,7 @@
 ##' effect which create a new alignment file with standardized
 ##' sequence lengths.
 ##' @author Francois Michonneau
+##' @export
 completeSeqWithGaps <- function(file, output, format = "fasta", colsep = "", gaps = "-", ...) {
 
     alg <- read.dna(file, format = "fasta", as.character = TRUE, as.matrix = FALSE)

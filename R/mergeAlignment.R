@@ -17,6 +17,7 @@
 ##' @return TRUE if the function succeeded. This function is mostly
 ##' used for its side effect of merging different sequences/alignments.
 ##' @author Francois Michonneau
+##' @export
 mergeAlignment <- function(listFiles, output, seqFolder) {
 
     stopifnot(!file.exists(output))

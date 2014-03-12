@@ -23,6 +23,7 @@
 ##' @return TRUE if the function succeed, mostly used for its side
 ##' effect (create files with individual sequences).
 ##' @author Francois Michonneau
+##' @export
 splitAlignment <- function(file, output, format="fasta",
                            colw=10000, convertEnds=FALSE, checkAmbiguity=TRUE,
                            checkInternalGaps=FALSE, ...) {

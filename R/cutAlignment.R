@@ -12,6 +12,7 @@
 ##' @return TRUE if the function worked, used for its side effect of
 ##' creating individual partition files.
 ##' @author Francois Michonneau
+##' @export
 cutAlignment <- function(algfile, partfile, formatin="fasta", ...) {
     pfile <- scan(file=partfile, what="character", sep="\n")
     pfile <- sapply(pfile, function(x) gsub("\\s?", "", x))

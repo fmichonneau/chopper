@@ -18,6 +18,7 @@
 ##' more internal gaps, if quiet=FALSE, this vector is returned
 ##' invisibly in addition of the messages.
 ##' @author Francois Michonneau
+##' @export
 checkInternalGaps <- function(file, format="fasta", quiet=TRUE, ...) {
     alg <- read.dna(file=file, format=format, as.character=TRUE, as.matrix=TRUE,
                     ...)
