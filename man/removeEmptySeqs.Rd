@@ -3,7 +3,7 @@
 \title{Remove empty sequences}
 \usage{
 removeEmptySeqs(file, output, formatin = "fasta", formatout = "fasta",
-  quiet = FALSE, gap = "?", ...)
+  quiet = FALSE, gap = c("?", "-"), ...)
 }
 \arguments{
   \item{file}{path and file name for a DNA alignment}
@@ -37,9 +37,9 @@ Removes empty sequences from an alignment
 }
 \details{
 This function takes an alignemnt, and remove sequences that
-only contains \dQuote{?}. This function can read the same
-type of alignment files as ape:::read.dna, and output the
-same formats as ape:::write.dna
+only contains gaps. This function can read the same type of
+alignment files as ape:::read.dna, and output the same
+formats as ape:::write.dna
 }
 \author{
 Francois Michonneau

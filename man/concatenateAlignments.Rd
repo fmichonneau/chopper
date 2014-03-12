@@ -31,8 +31,9 @@ concatenateAlignments(pattern, path, output, input.format = "fasta",
   partition file}
 
   \item{standardize}{not needed if alignments created by
-  \sQuote{mergeSeq}, otherwise make sure that alignments
-  for individual markers all share the same names}
+  \sQuote{mergeSeq}. Otherwise the alignments names are
+  standardized for each of the individual markers by
+  generating empty sequences.}
 
   \item{...}{further arguments to be passed to write.dna
   for the output file}
