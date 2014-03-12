@@ -77,7 +77,7 @@ concatenateAlignments <- function(pattern, path, output,
                     }
                 }
             }
-            tmpAlg <- tmpAlg[match(dimnames(tmpAlg)[[1]], dimnames(firstAlg)[[1]]), ]
+            tmpAlg <- tmpAlg[match(dimnames(firstAlg)[[1]], dimnames(tmpAlg)[[1]]), ]
             firstAlg <- cbind(firstAlg, tmpAlg)
             sizeAlg[i] <- dim(tmpAlg)[2]
         }
