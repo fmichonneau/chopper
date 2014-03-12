@@ -14,21 +14,16 @@
 ##' @author Francois Michonneau
 ##' @export
 cutAlignment <- function(algfile, partfile, formatin="fasta", ...) {
-    pfile <- scan(file=partfile, what="character", sep="\n")
-    pfile <- sapply(pfile, function(x) gsub("\\s?", "", x))
-    pLoc <- sapply(strsplit(pfile, ","), function(x) x[2])
-    pLoc <- strsplit(pLoc, "=")
-    pNm <- sapply(pLoc, function(x) x[1])
-    pRange <- sapply(pLoc, function(x) x[2])
-    pRange <- strsplit(pRange, "-")
-    pBeg <- lapply(pRange, function(x) x[1])
-    pBeg <- as.integer(pBeg)
-    pEnd <- lapply(pRange, function(x) x[2])
-    pEnd <- as.integer(pEnd)
+
+    pInfo <- raxmlPartitionInfo(partfile)
+
+    pNm <- pInfo$locusName
+    pBeg <- pInfo$locusStart
+    pEnd <- pInfo$locusEnd
 
     alg <- read.dna(file=algfile, format=formatin, as.matrix=TRUE)
 
-    for (i in 1:length(pRange)) {
+    for (i in 1:length(pBeg)) {
         tmpAlg <- alg[, pBeg[i]:pEnd[i]]
         ext <- gsub("(.+)\\.([a-zA-Z]{3,}$)", paste("\\1_", pNm[i], ".\\2", sep=""), algfile)
         write.dna(tmpAlg, file=ext, ...)
