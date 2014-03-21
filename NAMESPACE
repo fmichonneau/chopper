@@ -1,6 +1,7 @@
 export(alg2Csv)
 export(checkAmbiguity)
 export(checkInternalGaps)
+export(cleanSeqLabels)
 export(completeSeqWithGaps)
 export(concatenateAlignments)
 export(cutAlignment)
