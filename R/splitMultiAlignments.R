@@ -8,8 +8,10 @@
 ##' for replicate), the replicate number, the name of the marker/locus
 ##' (which should be part of the file name between an underscore and
 ##' \sQuote{.phy}, e.g., \code{myalignment_marker.phy}).
-##' @title splitMultiAlignments -- split multiple alignments into individual files
-##' @param file the path and file name of the simulated file to be broken down.
+##' @title splitMultiAlignments -- split multiple alignments into
+##' individual files
+##' @param file the name of the file containing the multiple
+##' alignemnts to be split.
 ##' @param prefix the prefix for each of the file name 
 ##' @param pathin path (i.e., directory) where the replicates for each
 ##' locus are stored

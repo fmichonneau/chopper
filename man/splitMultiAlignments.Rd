@@ -1,12 +1,13 @@
 \name{splitMultiAlignments}
 \alias{splitMultiAlignments}
-\title{splitMultiAlignments -- split multiple alignments into individual files}
+\title{splitMultiAlignments -- split multiple alignments into
+individual files}
 \usage{
 splitMultiAlignments(file, prefix, pathin, pathout)
 }
 \arguments{
-  \item{file}{the path and file name of the simulated file
-  to be broken down.}
+  \item{file}{the name of the file containing the multiple
+  alignemnts to be split.}
 
   \item{prefix}{the prefix for each of the file name}
 
