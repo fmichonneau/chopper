@@ -17,7 +17,7 @@ alg2Csv <- function(file, output, format="fasta") {
     alg <- read.dna(file=file, format=format, as.character=TRUE)
     if (file.exists(output)) stop(output, " already exists.")
     for (i in order(dimnames(alg)[[1]])) {
-        seq <- paste(alg[i, ], collapse="")
+        seq <- paste0(alg[i, ], collapse="")
         seq <- toupper(seq)
         cat("\"", dimnames(alg)[[1]][i], "\"", ",", sep="", file=output, append=TRUE)
         cat("\"", seq, "\"", sep="", file=output, append=TRUE)

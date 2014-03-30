@@ -22,7 +22,7 @@
 checkInternalGaps <- function(file, format="fasta", quiet=TRUE, ...) {
     alg <- read.dna(file=file, format=format, as.character=TRUE, as.matrix=TRUE,
                     ...)
-    tmpAlg <- apply(alg, 1, function(x) paste(x, collapse="", sep=""))
+    tmpAlg <- apply(alg, 1, function(x) paste0(x, collapse=""))
     listGap <- sapply(tmpAlg, function(x) gregexpr("[actgn]-+[actgn]", x, ignore.case=TRUE))
     hasGap <- sapply(listGap, function(x) x[1] != -1)
     locGap <- lapply(listGap[hasGap], function(x) x[1:length(x)]+1)

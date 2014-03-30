@@ -18,7 +18,7 @@ dealign <- function(file, output) {
     cat(character(0), file=output)
     for (i in 1:length(beg)) {
         cat(fContent[beg[i]], "\n", file=output, sep="", append=TRUE)
-        concSeq <- paste(fContent[(beg[i]+1):end[i]], collapse="", sep="")
+        concSeq <- paste0(fContent[(beg[i]+1):end[i]], collapse="")
         concSeq <- gsub("-", "", concSeq)
         cat(concSeq, "\n", file=output, sep="", append=TRUE)
     }
