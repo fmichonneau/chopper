@@ -50,11 +50,11 @@ cat("5 5",
 "(D);E  TTTTT",
 "F[G]   CCCCC",
 "H'''   GGGGG",
-"IIJ    TTTTT", file="/tmp/testAlg.phy", sep="\n")
+"IIJ    TTTTT", file="/tmp/testAlg.phy", sep="\\n")
 
 exDNA <- read.dna(file="/tmp/testAlg.phy", format="seq")
-dimnames(exDNA)[[1]][3] <- "F \t [G]"
-dimnames(exDNA)[[1]][5] <- "I I' J\""
+dimnames(exDNA)[[1]][3] <- "F \\t [G]"
+dimnames(exDNA)[[1]][5] <- "I I' J\\""
 exDNA <- cleanSeqLabels(xx, software="RAxML")
 attr(exDNA, "oldnames")
 }
