@@ -25,7 +25,7 @@ alg2nex <- function(file, format = "sequential", interleaved = FALSE, gap = "-",
     alg <- read.dna(file = file, format = format, as.character = TRUE)
     nfnm <- gsub("(\\.?.+)\\.(.+)$", "\\1.nex", file)
     nalg <- apply(alg, 1, function(x) paste(x, sep = "", collapse = ""))
-    my.write.nexus.data(nalg, file = nfnm, interleaved = interleaved, gap = gap, missing = missing, ...)
+    seq.write.nexus.data(nalg, file = nfnm, interleaved = interleaved, gap = gap, missing = missing, ...)
     if (! is.null(partition.file)) {
         if (file.exists(partition.file)) {
             outFile <- file(nfnm, "a")
