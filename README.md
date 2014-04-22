@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/fmichonneau/seqManagement.png?branch=master)](https://travis-ci.org/fmichonneau/seqManagement.png)
 
+Latest Build log: https://travis-ci.org/fmichonneau/seqManagement
 
 # seqManagement
 
