@@ -3,7 +3,7 @@
 \title{Converts from PHYLIP or FASTA format to NEXUS format.}
 \usage{
 alg2nex(file, format = "sequential", interleaved = FALSE, gap = "-",
-  missing = "?", partition.file = NULL, ...)
+  missing = "?", partition.file = NULL)
 }
 \arguments{
   \item{file}{file in phylip format
@@ -26,8 +26,6 @@ alg2nex(file, format = "sequential", interleaved = FALSE, gap = "-",
   it's the path to a valid file is given this file is
   appended to the alignement. Particularly useful to
   include partition information in the NEXUS file.}
-
-  \item{...}{}
 }
 \value{
 nothing, used for its side of generating a NEXUS file
@@ -37,9 +35,17 @@ Converts an alignment from the PHYLIP or FASTA format to
 the NEXUS format.
 }
 \details{
-This function only takes alignments. It
+This function only takes alignments (all sequences must be
+the same length). It uses a slightly modified version of
+ape's \code{write.nexus.data}. With this function it is
+also possible to append partition information at the end of
+the alignment. The partition information has to be written
+in the NEXUS format and be provided in a separate file.
 }
 \author{
 Francois Michonneau
+}
+\seealso{
+ape::write.nexus.data
 }
 
