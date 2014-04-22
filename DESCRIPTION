@@ -14,3 +14,21 @@ License: GPL (>= 2)
 LazyData: true
 URL: https://github.com/fmichonneau/seqManagement
 BugReports: https://github.com/fmichonneau/seqManagement/issues
+Collate:
+    'alg2csv.R'
+    'seq.write.nexus.data.R'
+    'alg2nex.R'
+    'checkAmbiguity.R'
+    'checkInternalGaps.R'
+    'cleanSeqLabels.R'
+    'completeSeqWithGaps.R'
+    'concatenateAlignments.R'
+    'cutAlignment.R'
+    'dealign.R'
+    'fas2phy.R'
+    'mergeAlignment.R'
+    'raxmlPartitionInfo.R'
+    'removeEmptySeqs.R'
+    'seqManagement-package.R'
+    'splitAlignment.R'
+    'splitMultiAlignments.R'
