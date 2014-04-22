@@ -13,7 +13,7 @@
 ##' \sQuote{output} file where specified.
 ##' @author Francois Michonneau
 ##' @export
-alg2Csv <- function(file, output, format="fasta") {
+alg2csv <- function(file, output, format="fasta") {
     alg <- read.dna(file=file, format=format, as.character=TRUE)
     if (file.exists(output)) stop(output, " already exists.")
     for (i in order(dimnames(alg)[[1]])) {
