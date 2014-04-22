@@ -21,6 +21,7 @@
 ##' @return A logical vector indicating whether the file was created
 ##' named with the name of the file.
 ##' @seealso ape::write.dna
+##' @export
 ##' @author Francois Michonneau
 fas2phy <- function(file, format="sequential", toDrop,
                     overwrite=FALSE, ...) {

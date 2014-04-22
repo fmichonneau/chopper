@@ -1,0 +1,44 @@
+\name{fas2phy}
+\alias{fas2phy}
+\title{Converts FASTA files into PHYLIP format}
+\usage{
+fas2phy(file, format = "sequential", toDrop, overwrite = FALSE, ...)
+}
+\arguments{
+  \item{file}{Character string indicating the FASTA file to
+  convert.}
+
+  \item{format}{The output format for the file:
+  \code{sequential} or \code{interleaved}.}
+
+  \item{toDrop}{Character vector indicating the names of
+  the sequences to remove.}
+
+  \item{overwrite}{If there is already a file with the same
+  names as the output file in the working directory, should
+  it be overwritten? (logical, default \code{FALSE}).}
+
+  \item{...}{Additional arguments to be passed to}
+}
+\value{
+A logical vector indicating whether the file was created
+named with the name of the file.
+}
+\description{
+Converts FASTA files to a relaxed PHYLIP format.
+}
+\details{
+Simple wrapper for ape::read.dna and ape::write.dna to
+facilitate file conversion. The output file gets the same
+name as the input file with the extension \dQuote{.phy}.
+The function only accepts alignments (all sequences must be
+the same lengths). This function also allows to remove some
+sequences from the alignment (using their names).
+}
+\author{
+Francois Michonneau
+}
+\seealso{
+ape::write.dna
+}
+
