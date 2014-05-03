@@ -26,8 +26,27 @@ of mergeSeq)
 }
 \details{
 At this time, only takes a RAxML formatted partition file.
+The individual partition generated are named with the full
+alignment followed by the partition names specified in the
+partition file separated by an underscore. For each of the
+file created, the same extension as the full alignment is
+used. For instance, if your alignment file is named
+\code{fullAlignment.phy}, and your partitions are named
+\code{part1}, \code{part2} and \code{part3}, this function
+will generate the files \code{fullAlignment_part1.phy},
+\code{fullAlignment_part2.phy}, and
+\code{fullAlignment_part3.phy}.
+}
+\examples{
+\dontrun{
+cutAlignment("fullAlignment.phy", partfile="partInfo.part",
+             formatin="sequential", format="sequential", colsep="")
+}
 }
 \author{
 Francois Michonneau
+}
+\seealso{
+\code{\link{write.dna}}
 }
 

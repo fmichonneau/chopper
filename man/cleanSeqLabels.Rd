@@ -41,7 +41,7 @@ The function also adds an attribute to the alignment object
 
 Here is the list of regular expression used for the
 different software: \describe{
-\item{RAxML}{":|,|\\(|\\)|;|\\[|\\]|\\'|\\s|\t"} }
+\item{RAxML}{\code{":|,|\\(|\\)|;|\\[|\\]|\\'|\\s|\t"}} }
 }
 \examples{
 \dontrun{
