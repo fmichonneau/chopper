@@ -16,7 +16,7 @@
 ##'
 ##' Here is the list of regular expression used for the different software:
 ##' \describe{
-##' \item{RAxML}{":|,|\\(|\\)|;|\\[|\\]|\\'|\\s|\t"}
+##' \item{RAxML}{\code{":|,|\\(|\\)|;|\\[|\\]|\\'|\\s|\t"}}
 ##' }
 ##' @title cleanSeqLabels
 ##' @param alg an object created by the function ape::read.dna
@@ -39,7 +39,7 @@
 ##' "IIJ    TTTTT", file="/tmp/testAlg.phy", sep="\n")
 ##'
 ##' exDNA <- read.dna(file="/tmp/testAlg.phy", format="seq")
-##' dimnames(exDNA)[[1]][3] <- "F \t [G]" 
+##' dimnames(exDNA)[[1]][3] <- "F \t [G]"
 ##' dimnames(exDNA)[[1]][5] <- "I I' J\""
 ##' exDNA <- cleanSeqLabels(xx, software="RAxML")
 ##' attr(exDNA, "oldnames")
