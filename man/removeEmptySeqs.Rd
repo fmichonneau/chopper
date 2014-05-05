@@ -4,7 +4,7 @@
 \title{Remove empty sequences}
 \usage{
 removeEmptySeqs(file, output, formatin = "fasta", formatout = "fasta",
-  quiet = FALSE, gap = c("?", "-"), ...)
+  quiet = FALSE, gap, ...)
 }
 \arguments{
 \item{file}{path and file name for a DNA alignment}
