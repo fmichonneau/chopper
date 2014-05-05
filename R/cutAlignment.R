@@ -1,6 +1,6 @@
 
 ##' Given an alignment and a partition file, takes the alignment and
-##' cuts it into individual partitions (opposite of mergeSeq)
+##' cuts it into individual partitions.
 ##'
 ##' At this time, only takes a RAxML formatted partition file. The
 ##' individual partition generated are named with the full alignment
@@ -32,15 +32,14 @@
 cutAlignment <- function(algfile, partfile, formatin="fasta", ...) {
 
     pInfo <- seqManagement::raxmlPartitionInfo(partfile)
-
-    pNm <- pInfo$locusName
-    pBeg <- pInfo$locusStart
-    pEnd <- pInfo$locusEnd
+    pExp <-  seqManagement::expandPartitionInfo(pInfo)
+    
+    pNm <- names(pExp)
 
     alg <- ape::read.dna(file=algfile, format=formatin, as.matrix=TRUE)
 
-    for (i in 1:length(pBeg)) {
-        tmpAlg <- alg[, pBeg[i]:pEnd[i]]
+    for (i in 1:length(pExp)) {
+        tmpAlg <- alg[, pExp[[i]]]
         ext <- gsub("(.+)\\.([a-zA-Z]{1,}$)",
                     paste("\\1_", pNm[i], ".\\2", sep=""), algfile)
         ape::write.dna(tmpAlg, file=ext, ...)
