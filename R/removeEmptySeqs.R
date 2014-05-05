@@ -21,14 +21,13 @@
 ##' @author Francois Michonneau
 ##' @export
 removeEmptySeqs <- function(file, output, formatin="fasta", formatout="fasta",
-                            quiet=FALSE, gap=c("?", "-"), ...) {
-    gap <- match.arg(gap)
+                            quiet=FALSE, gap, ...) {
     if (missing(output)) {
         output <- file
         if (!quiet) warning("no output precised, original file overwritten.")
     }
-    gapchar <- ifelse(gap == "?", "\\?", gap) # TODO need better
-    alg <- read.dna(file, format=formatin, as.character=TRUE, as.matrix=TRUE, ...)     
+    gapchar <- paste("\\Q", gap, "\\E", sep="")
+    alg <- ape::read.dna(file, format=formatin, as.character=TRUE, as.matrix=TRUE, ...)     
     nMissing <- apply(alg, 1, function(x) length(grep(gapchar, x)))
     whichNotMissing <- sapply(nMissing, function(x) x != dim(alg)[2])
     alg <- alg[whichNotMissing, ]
