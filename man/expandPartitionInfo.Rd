@@ -26,7 +26,7 @@ cat("DNA, p1 = 1-15\\\\3,2-15\\\\3",
     file="testPartition.part")
 pInfo <- raxmlPartitionInfo("testPartition.part")
 expandPartitionInfo(pInfo)
-unlink(testPartition.part)
+unlink("testPartition.part")
 }
 \author{
 Francois Michonneau

@@ -14,7 +14,7 @@
 ##'     file="testPartition.part")
 ##' pInfo <- raxmlPartitionInfo("testPartition.part")
 ##' expandPartitionInfo(pInfo)
-##' unlink(testPartition.part)
+##' unlink("testPartition.part")
 ##' @seealso raxmlPartitionInfo
 ##' @author Francois Michonneau
 ##' @export
