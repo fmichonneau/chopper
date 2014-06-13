@@ -27,6 +27,7 @@ Collate:
     'cleanSeqLabels.R'
     'completeSeqWithGaps.R'
     'concatenateAlignments.R'
+    'convertGaps.R'
     'cutAlignment.R'
     'dealign.R'
     'expandPartitionInfo.R'
