@@ -23,6 +23,7 @@
 ##' \code{\link[ape]{write.dna}}.
 ##' @return the name of the output file (invisibly).
 ##' @author Francois Michonneau
+##' @export
 convertGaps <- function(file, output, formatin="sequential", formatout=formatin,
                         colsep="", from="?", to="-", overwrite=FALSE, ...) {
     if (missing(output) && overwrite)  output <- file
