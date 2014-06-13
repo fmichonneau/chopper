@@ -10,9 +10,12 @@
 ##' @return A list that includes the elements:
 ##' \describe{
 ##' \item{\code{file}}{the partition file name}
-##' \item{\code{locusName}}{a vector of character indicating the name of each partition}
-##' \item{\code{locusStart}}{a vector of numeric indicating the first position in the alignment for the locus}
-##' \item{\code{locusEnd}}{a vector of numeric indicating the last position in the alignement of the locus}}
+##' \item{\code{locusName}}{a vector of character indicating
+##' the name of each partition}
+##' \item{\code{locusStart}}{a vector of numeric indicating the
+##' first position in the alignment for the locus}
+##' \item{\code{locusEnd}}{a vector of numeric indicating the
+##' last position in the alignement of the locus}}
 ##' @export
 ##' @author Francois Michonneau
 raxmlPartitionInfo <- function(partfile) {
