@@ -1,7 +1,7 @@
 
 ##' Removes empty sequences from an alignment
 ##'
-##' This function takes an alignemnt, and remove sequences that only
+##' This function takes an alignment, and remove sequences that only
 ##' contains gaps. This function can read the same type of alignment
 ##' files as ape:::read.dna, and output the same formats as
 ##' ape:::write.dna
@@ -10,8 +10,14 @@
 ##' @param output path and file name of the alignment with the missing
 ##' data removed. If missing, the original file is overwritten, with
 ##' an a posteriori warning, unless quiet=TRUE.
-##' @param formatin format of the alignment to check (to be passed to ape:::read.dna)
-##' @param formatout format of the alignemnt to write (to be passed to ape:::write.dna)
+##' @param formatin format of the alignment to check (to be passed to
+##' \code{\link[ape]{read.dna}})
+##' @param formatout format of the alignemnt to write (to be passed to
+##' \code{\link[ape]{write.dna}})
+##' @param colsep argument to be passed to
+##' \code{\link[ape]{write.dna}}, character used to separate columns
+##' in DNA alignment (\code{ape}'s default is a single space, here we
+##' override this to no character, i.e. \code{colsep=""}).
 ##' @param quiet If FALSE, no warning is issued to indicate that the
 ##' original file has been overwritten.
 ##' @param gap character in the sequence to be considered as missing data
@@ -20,8 +26,8 @@
 ##' effect of creating a new alignment file.
 ##' @author Francois Michonneau
 ##' @export
-removeEmptySeqs <- function(file, output, formatin="fasta", formatout="fasta",
-                            quiet=FALSE, gap, ...) {
+removeEmptySeqs <- function(file, output, formatin="fasta", formatout=formatin,
+                            colsep="", quiet=FALSE, gap, ...) {
     if (missing(output)) {
         output <- file
         if (!quiet) warning("no output precised, original file overwritten.")
@@ -31,6 +37,6 @@ removeEmptySeqs <- function(file, output, formatin="fasta", formatout="fasta",
     nMissing <- apply(alg, 1, function(x) length(grep(gapchar, x)))
     whichNotMissing <- sapply(nMissing, function(x) x != dim(alg)[2])
     alg <- alg[whichNotMissing, ]
-    write.dna(alg, file=output, format=formatout, colsep="", colw=10000)
+    write.dna(alg, file=output, format=formatout, colsep=colsep, ...)
     invisible(names(whichNotMissing[!whichNotMissing]))
 }

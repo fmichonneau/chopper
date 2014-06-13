@@ -3,8 +3,8 @@
 \alias{removeEmptySeqs}
 \title{Remove empty sequences}
 \usage{
-removeEmptySeqs(file, output, formatin = "fasta", formatout = "fasta",
-  quiet = FALSE, gap, ...)
+removeEmptySeqs(file, output, formatin = "fasta", formatout = formatin,
+  colsep = "", quiet = FALSE, gap, ...)
 }
 \arguments{
 \item{file}{path and file name for a DNA alignment}
@@ -13,9 +13,16 @@ removeEmptySeqs(file, output, formatin = "fasta", formatout = "fasta",
 data removed. If missing, the original file is overwritten, with
 an a posteriori warning, unless quiet=TRUE.}
 
-\item{formatin}{format of the alignment to check (to be passed to ape:::read.dna)}
+\item{formatin}{format of the alignment to check (to be passed to
+\code{\link[ape]{read.dna}})}
 
-\item{formatout}{format of the alignemnt to write (to be passed to ape:::write.dna)}
+\item{formatout}{format of the alignemnt to write (to be passed to
+\code{\link[ape]{write.dna}})}
+
+\item{colsep}{argument to be passed to
+\code{\link[ape]{write.dna}}, character used to separate columns
+in DNA alignment (\code{ape}'s default is a single space, here we
+override this to no character, i.e. \code{colsep=""}).}
 
 \item{quiet}{If FALSE, no warning is issued to indicate that the
 original file has been overwritten.}
@@ -32,7 +39,7 @@ effect of creating a new alignment file.
 Removes empty sequences from an alignment
 }
 \details{
-This function takes an alignemnt, and remove sequences that only
+This function takes an alignment, and remove sequences that only
 contains gaps. This function can read the same type of alignment
 files as ape:::read.dna, and output the same formats as
 ape:::write.dna

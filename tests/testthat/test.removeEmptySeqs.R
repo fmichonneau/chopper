@@ -13,7 +13,7 @@ test_that("phylip gaps as -", {
     expect_equal(dim(resOut), c(2, 6))
     expect_equal(dimnames(resOut)[[1]], c("sp1", "sp2"))
     expect_warning(
-        resMade <- removeEmptySeqs("testPhy.phy", formatin="seq", formatout="seq",
+        resMade <- removeEmptySeqs("testPhy.phy", formatin="seq",
                                    quiet=FALSE, gap="-")
         )
     expect_equal(resMade, "sp3")    
@@ -33,7 +33,7 @@ test_that("phylip gaps as *", {
     expect_equal(dim(resOut), c(2, 6))
     expect_equal(dimnames(resOut)[[1]], c("sp1", "sp2"))
     expect_warning(
-        resMade <- removeEmptySeqs("testPhy.phy", formatin="seq", formatout="seq",
+        resMade <- removeEmptySeqs("testPhy.phy", formatin="seq",
                                    quiet=FALSE, gap="*")
         )
     expect_equal(resMade, "sp3")    
