@@ -16,7 +16,15 @@
 ##' @title Cut an alignment into individual partitions.
 ##' @param algfile file name of the alignment to cut
 ##' @param partfile file name of the partition file
-##' @param formatin format of the DNA alignment (to be passed to ape:::read.dna)
+##' @param formatin format of the DNA alignment (to be passed to
+##' ape:::read.dna)
+##' @param formatout format of the DNA alignment to be returned (by
+##' default same as \code{formatin}, can be any value accepted by
+##' \code{\link[ape]{write.dna}})
+##' @param colsep argument to be passed to
+##' \code{\link[ape]{write.dna}}, character used to separate columns
+##' in DNA alignment (\code{ape}'s default is a single space, here we
+##' override this to no character, i.e. \code{colsep=""}).
 ##' @param ... additional arguments controlling the formating of the
 ##' output (to be passed to ape:::write.dna)
 ##' @return TRUE if the function worked, used for its side effect of
@@ -26,10 +34,11 @@
 ##' @examples
 ##' \dontrun{
 ##' cutAlignment("fullAlignment.phy", partfile="partInfo.part",
-##'              formatin="sequential", format="sequential", colsep="")
+##'              formatin="sequential", colsep="")
 ##' }
 ##' @export
-cutAlignment <- function(algfile, partfile, formatin="fasta", ...) {
+cutAlignment <- function(algfile, partfile, formatin="fasta", formatout=formatin,
+                         colsep="", ...) {
 
     pInfo <- seqManagement::raxmlPartitionInfo(partfile)
     pExp <-  seqManagement::expandPartitionInfo(pInfo)
@@ -38,11 +47,13 @@ cutAlignment <- function(algfile, partfile, formatin="fasta", ...) {
 
     alg <- ape::read.dna(file=algfile, format=formatin, as.matrix=TRUE)
 
+    fNm <- character(length(pExp))
     for (i in 1:length(pExp)) {
         tmpAlg <- alg[, pExp[[i]]]
-        ext <- gsub("(.+)\\.([a-zA-Z]{1,}$)",
+        fNm[i] <- gsub("(.+)\\.([a-zA-Z]{1,}$)",
                     paste("\\1_", pNm[i], ".\\2", sep=""), algfile)
-        ape::write.dna(tmpAlg, file=ext, ...)
+        ape::write.dna(tmpAlg, file=fNm[i], format=formatout,
+                       colsep=colsep, ...)
     }
-    TRUE
+    invisible(fNm)
 }

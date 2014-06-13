@@ -44,8 +44,8 @@ cat("3 3",
     sep="\n", file=part3File)
 close(part3File)
 
-cutAlignment(algfile="testAlignment.phy", partfile="testPart.part",
-             formatin="sequential", format="sequential", colsep="")
+cut1 <- cutAlignment(algfile="testAlignment.phy", partfile="testPart.part",
+                     formatin="sequential", colsep="")
 
 test_that("cutAlignment creates files correctly", {
     expect_true(file.exists("testAlignment_part1.phy"))
@@ -65,13 +65,23 @@ test_that("cutAlignment cuts where it is supposed to when partitions are specifi
     expect_identical(part3Gen, part3Expect)
 })
 
-cutAlignment(algfile="testAlignment.phy", partfile="testPart2.part",
-             formatin="sequential", colsep="")
+test_that("cutAlignemnt returns the correct file names", {
+    expect_identical(cut1, c("testAlignment_part1.phy",
+                             "testAlignment_part2.phy",
+                             "testAlignment_part3.phy"))
+})
+
+cut2 <- cutAlignment(algfile="testAlignment.phy", partfile="testPart2.part",
+                     formatin="sequential", colsep="")
 
 test_that("cutAlignment works with 1 single partition specified", {
     onePartGen <- readLines("testAlignment_part.phy")
     onePartExpected <- readLines("testAlignment.phy")
     expect_identical(onePartGen, onePartExpected)
+})
+
+test_that("cutAlignment returns correct file names", {
+    expect_identical(cut2, c("testAlignment_part.phy"))
 })
 
 lF <- list.files(pattern="phy$")
