@@ -4,7 +4,7 @@
 \title{Remove empty sequences}
 \usage{
 removeEmptySeqs(file, output, formatin = "fasta", formatout = formatin,
-  colsep = "", quiet = FALSE, gap, ...)
+  colsep = "", overwrite = FALSE, gap, ...)
 }
 \arguments{
 \item{file}{path and file name for a DNA alignment}
@@ -24,12 +24,13 @@ an a posteriori warning, unless quiet=TRUE.}
 in DNA alignment (\code{ape}'s default is a single space, here we
 override this to no character, i.e. \code{colsep=""}).}
 
-\item{quiet}{If FALSE, no warning is issued to indicate that the
-original file has been overwritten.}
+\item{overwrite}{If no output file is specified and if overwrite is TRUE,
+the original file is overwritten.}
 
 \item{gap}{character in the sequence to be considered as missing data}
 
-\item{...}{additional arguments to be passed to ape:::read.dna.}
+\item{...}{additional arguments to be passed to
+\code{\link[ape]{write.dna}}.}
 }
 \value{
 TRUE if function succeedeed, but mostly used for its side
