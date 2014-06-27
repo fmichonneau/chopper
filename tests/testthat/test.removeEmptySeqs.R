@@ -1,5 +1,5 @@
 
-context("removeEmptySeqq")
+context("removeEmptySeqs")
 
 test_that("phylip gaps as -", {
     cat("3 6",
@@ -8,14 +8,16 @@ test_that("phylip gaps as -", {
         "sp3   ------",
         sep="\n", file="testPhy.phy")
     resMade <- removeEmptySeqs("testPhy.phy", output="testPhy_red.phy",
-                               formatin="seq", formatout="seq", gap="-")
+                               formatin="sequential", gap="-")
     resOut <- ape::read.dna(file="testPhy_red.phy", format="sequential")
     expect_equal(dim(resOut), c(2, 6))
     expect_equal(dimnames(resOut)[[1]], c("sp1", "sp2"))
-    expect_warning(
+    expect_error(
         resMade <- removeEmptySeqs("testPhy.phy", formatin="seq",
-                                   quiet=FALSE, gap="-")
+                                   overwrite=FALSE, gap="-")
         )
+    resMade <- removeEmptySeqs("testPhy.phy", formatin="seq",
+                               overwrite=TRUE, gap="-")
     expect_equal(resMade, "sp3")    
     unlink("testPhy.phy")
     unlink("testPhy_red.phy")
@@ -28,14 +30,16 @@ test_that("phylip gaps as *", {
         "sp3   ******",
         sep="\n", file="testPhy.phy")
     resMade <- removeEmptySeqs("testPhy.phy", output="testPhy_red.phy",
-                               formatin="seq", formatout="seq", gap="*")
+                               formatin="sequential", gap="*")
     resOut <- ape::read.dna(file="testPhy_red.phy", format="sequential")
     expect_equal(dim(resOut), c(2, 6))
     expect_equal(dimnames(resOut)[[1]], c("sp1", "sp2"))
-    expect_warning(
+    expect_error(
         resMade <- removeEmptySeqs("testPhy.phy", formatin="seq",
-                                   quiet=FALSE, gap="*")
+                                   overwrite=FALSE, gap="*")
         )
+    resMade <- removeEmptySeqs("testPhy.phy", formatin="seq",
+                               overwrite=TRUE, gap="*")
     expect_equal(resMade, "sp3")    
     unlink("testPhy.phy")
     unlink("testPhy_red.phy")

@@ -3,8 +3,8 @@ Title: seqManagement -- an R package for alignment manipulation and data
     preparation for common phylogenetic analyses
 Description: Suite of functions to manipulate sequences and alignment
     to facilate and automate data preparation.
-Version: 0.1.1
-Date: 2014-05-05
+Version: 0.1.2
+Date: 2014-06-27
 Author: person("Francois", "Michonneau", role=c("aut", "cre"),
     email="francois.michonneau@gmail.com")
 Maintainer: Francois Michonneau <francois.michonneau@gmail.com>
