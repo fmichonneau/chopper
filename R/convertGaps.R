@@ -26,13 +26,16 @@
 ##' @export
 convertGaps <- function(file, output, formatin="sequential", formatout=formatin,
                         colsep="", from="?", to="-", overwrite=FALSE, ...) {
-    if (missing(output) && overwrite)  output <- file
+    if (missing(output)) {
+        if (overwrite)  output <- file
+        else stop("Indicate output file or allow file to be overwritten.")
+    }
     alg <- ape::read.dna(file=file, format=formatin, as.character=TRUE, as.matrix=TRUE)
     newalg <- apply(alg, 2, function(x) {
         x[x == from] <- to
         x
     })
-    ape::write.dna(newalg, file=output, formatout, colsep="")
+    ape::write.dna(newalg, file=output, formatout, colsep="", ...)
     invisible(output)
 }
 
