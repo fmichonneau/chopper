@@ -18,10 +18,12 @@
 ##' @param partition.format which format should be used to create the
 ##' partition file (raxml or nexus)
 ##' @param create.conc if TRUE create the concatenated file, if FALSE
-##' usefule to just check things out or only create partition file
+##' useful for testing (dry run) or to create partition file
 ##' @param standardize not needed if alignments created by
 ##' \sQuote{mergeSeq}. Otherwise the alignments names are standardized
 ##' for each of the individual markers by generating empty sequences.
+##' @param drop a character vector indicating the sequences that need
+##' to be removed from the output
 ##' @param ... further arguments to be passed to write.dna for the
 ##' output file
 ##' @return This function is used for its side effect of creating an
@@ -37,9 +39,10 @@
 concatenateAlignments <- function(pattern, path, output,
                                   input.format = "fasta",
                                   partition = NULL,
-                                  partition.format = c("raxml",
-                                  "nexus"), create.conc = TRUE,
-                                  standardize=FALSE, ...) {
+                                  partition.format = c("raxml", "nexus"),
+                                  create.conc = TRUE,
+                                  standardize=FALSE,
+                                  drop, ...) {
 
     partition.format <- match.arg(partition.format)
     lAlg <- list.files(path = path, pattern = pattern)
@@ -82,7 +85,16 @@ concatenateAlignments <- function(pattern, path, output,
             firstAlg <- cbind(firstAlg, tmpAlg)
             sizeAlg[i] <- dim(tmpAlg)[2]
         }
-        if(create.conc) write.dna(firstAlg, file = output, ...)
+        if(create.conc) {
+            if (length(drop)) {
+                toRm <- match(drop, dimnames(firstAlg)[[1]])
+                if (any(is.na(toRm))) {
+                    stop("Some of the sequences specified in drop were not found.")
+                }
+                firstAlg <- firstAlg[-toRm, ]
+            }
+            write.dna(firstAlg, file = output, ...)
+        }
         if (!is.null(partition)) {
             cat(character(0), file = partition, append=FALSE)
             locNm <- gsub("(.+)-(.+)-(.+)\\.(.+)", "\\3", lAlg)
