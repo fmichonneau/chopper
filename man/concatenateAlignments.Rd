@@ -5,7 +5,7 @@
 \usage{
 concatenateAlignments(pattern, path, output, input.format = "fasta",
   partition = NULL, partition.format = c("raxml", "nexus"),
-  create.conc = TRUE, standardize = FALSE, ...)
+  create.conc = TRUE, standardize = FALSE, drop, ...)
 }
 \arguments{
 \item{pattern}{character string to identify aligned files in folder}
@@ -25,11 +25,14 @@ partitions}
 partition file (raxml or nexus)}
 
 \item{create.conc}{if TRUE create the concatenated file, if FALSE
-usefule to just check things out or only create partition file}
+useful for testing (dry run) or to create partition file}
 
 \item{standardize}{not needed if alignments created by
 \sQuote{mergeSeq}. Otherwise the alignments names are standardized
 for each of the individual markers by generating empty sequences.}
+
+\item{drop}{a character vector indicating the sequences that need
+to be removed from the output}
 
 \item{...}{further arguments to be passed to write.dna for the
 output file}
