@@ -17,7 +17,7 @@ Feedback, comments, bug reports are all welcome and encouraged!
 ## Installation
 
 This is an alpha, pre-release, package not available on CRAN. There is limited
-testing, function names can change, and ~it's full of bugs~ there might be some
+testing, function names can change, and ~~it's full of~~ there might be some
 bugs. To install it, you need to get it from here (github).
 
 Please note that this package may not work very well on Windows. It is developed
