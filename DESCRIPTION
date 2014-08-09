@@ -3,8 +3,8 @@ Title: seqManagement -- an R package for alignment manipulation and data
     preparation for common phylogenetic analyses
 Description: Suite of functions to manipulate sequences and alignmenst
     to facilate and automate data preparation.
-Version: 0.1.4
-Date: 2014-07-14
+Version: 0.1.5
+Date: 2014-08-09
 Author: person("Francois", "Michonneau", role=c("aut", "cre"),
     email="francois.michonneau@gmail.com")
 Maintainer: Francois Michonneau <francois.michonneau@gmail.com>
@@ -33,6 +33,7 @@ Collate:
     'expandPartitionInfo.R'
     'fas2phy.R'
     'mergeAlignment.R'
+    'nexusPartitionCreate.R'
     'raxmlPartitionCreate.R'
     'raxmlPartitionInfo.R'
     'removeEmptySeqs.R'
