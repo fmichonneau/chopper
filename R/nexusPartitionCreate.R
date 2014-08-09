@@ -26,9 +26,9 @@ nexusPartitionCreate <- function(alg, file.out="nexus_partition",
     if (file.exists(file.out) && !overwrite) stop(file.out, " already exists.")
     alg <- readLines(alg, n=1)
     lSeq <- unlist(strsplit(alg, " "))[2]
-    res <- paste0("  charset ", part.names, "=",
+    res <- paste0("  charset ", part.names, " = ",
                   1:length(part.names), "-", lSeq, "\\",
-                  length(part.names))
+                  length(part.names), ";")
     cat("begin assumptions;",
         res,
         "end;",
