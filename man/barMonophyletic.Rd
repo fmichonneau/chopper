@@ -46,7 +46,7 @@ the vertical bars.}
 \item{seg.col}{color of the vertical bar.}
 
 \item{srt}{the string rotation in degrees (see
-\code{\link[par]{srt}} in \code{par}) of the text next to the
+\code{see \code{srt} in \link[graphics]{par}}) of the text next to the
 vertical bars.}
 
 \item{bar.at.tips}{should the vertical bars be plotted right next
@@ -73,6 +73,6 @@ The element of the vector are considered labels and will be
 displayed next to the vertical bars.
 }
 \author{
-François Michonneau
+Francois Michonneau
 }
 

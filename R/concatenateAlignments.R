@@ -34,7 +34,10 @@
 ##' @export
 ##' @examples
 ##' \dontrun{
-##' concatenateAlignments(pattern="^20121017-112755.+afa$", path="/tmp/seq", output="/tmp/seq/20121017.impatiens.fas", partition="/tmp/seq/20121017.impatiens.part", partition.format="nexus", colsep="", colw=10000)
+##' concatenateAlignments(pattern="^20121017-112755.+afa$", path="/tmp/seq",
+##'                       output="/tmp/seq/20121017.impatiens.fas",
+##'                       partition="/tmp/seq/20121017.impatiens.part",
+##'                       partition.format="nexus", colsep="", colw=10000)
 ##' }
 concatenateAlignments <- function(pattern, path, output,
                                   input.format = "fasta",
