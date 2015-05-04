@@ -1,6 +1,4 @@
 
 if (require(testthat)) {
-    test_check("seqManagement")
+    test_check("chopper")
 }
-
-    

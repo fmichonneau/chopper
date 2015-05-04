@@ -1,10 +1,9 @@
-Package: seqManagement
-Title: seqManagement -- an R package for alignment manipulation and data
-    preparation for common phylogenetic analyses
-Description: Suite of functions to manipulate sequences and alignmenst
+Package: chopper
+Title: Alignment Manipulations and Data Preparation for Phylogenetic Analyses
+Description: A suite of functions to manipulate sequences and alignments
     to facilate and automate data preparation.
-Version: 0.1.5
-Date: 2014-08-09
+Version: 0.1.7
+Date: 2015-05-04
 Author: person("Francois", "Michonneau", role=c("aut", "cre"),
     email="francois.michonneau@gmail.com")
 Maintainer: Francois Michonneau <francois.michonneau@gmail.com>
@@ -16,14 +15,15 @@ Suggests:
     testthat (>= 0.8.1)
 License: GPL (>= 2)
 LazyData: true
-URL: https://github.com/fmichonneau/seqManagement
-BugReports: https://github.com/fmichonneau/seqManagement/issues
+URL: https://github.com/fmichonneau/chopper
+BugReports: https://github.com/fmichonneau/chopper/issues
 Collate:
     'alg2csv.R'
     'seq.write.nexus.data.R'
     'alg2nex.R'
     'checkAmbiguity.R'
     'checkInternalGaps.R'
+    'chopper-package.R'
     'cleanSeqLabels.R'
     'completeSeqWithGaps.R'
     'concatenateAlignments.R'
@@ -37,6 +37,5 @@ Collate:
     'raxmlPartitionCreate.R'
     'raxmlPartitionInfo.R'
     'removeEmptySeqs.R'
-    'seqManagement-package.R'
     'splitAlignment.R'
     'splitMultiAlignments.R'

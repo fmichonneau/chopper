@@ -12,7 +12,7 @@
 ##' this function will generate the files
 ##' \code{fullAlignment_part1.phy}, \code{fullAlignment_part2.phy},
 ##' and \code{fullAlignment_part3.phy}.
-##' 
+##'
 ##' @title Cut an alignment into individual partitions.
 ##' @param algfile file name of the alignment to cut
 ##' @param partfile file name of the partition file
@@ -40,9 +40,9 @@
 cutAlignment <- function(algfile, partfile, formatin="fasta", formatout=formatin,
                          colsep="", ...) {
 
-    pInfo <- seqManagement::raxmlPartitionInfo(partfile)
-    pExp <-  seqManagement::expandPartitionInfo(pInfo)
-    
+    pInfo <- chopper::raxmlPartitionInfo(partfile)
+    pExp <-  chopper::expandPartitionInfo(pInfo)
+
     pNm <- names(pExp)
 
     alg <- ape::read.dna(file=algfile, format=formatin, as.matrix=TRUE)

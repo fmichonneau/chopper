@@ -1,24 +1,24 @@
 
 
-[![Build Status](https://travis-ci.org/fmichonneau/seqManagement.png?branch=master)](https://travis-ci.org/fmichonneau/seqManagement.png)
+[![Build Status](https://travis-ci.org/fmichonneau/chopper.png?branch=master)](https://travis-ci.org/fmichonneau/chopper.png)
 
-Latest Build log: https://travis-ci.org/fmichonneau/seqManagement
+Latest Build log: https://travis-ci.org/fmichonneau/chopper
 
-# seqManagement (temporary name)
+# chopper
 
-This package (I'm still looking for a better name for it, as I misspell it
-everytime) is a collection of tools to help manipulate and format alignment
-files to be used for phylogenetic analyses. Overall, it is intended to faciliate
-reproducible analyses by generating input files (alignment, partitions, ...) in
-an automated way.
+This package (formerly known as seqManagement) is a collection of tools to help
+manipulate and format alignment files to be used for phylogenetic and population
+genetics analyses. Overall, it is intended to faciliate reproducible analyses by
+generating input files (alignment, partitions, ...) in ways that can be
+scripted.
 
-Feedback, comments, bug reports are all welcome and encouraged!
+Feedback, comments, bug reports are welcome and encouraged!
 
 ## Installation
 
-This is an alpha, pre-release, package not available on CRAN. There is limited
-testing, function names can change, and ~~it's full of~~ there might be some
-bugs. To install it, you need to get it from here (github).
+This is an alpha, pre-release, package not available on CRAN. Function names can
+change, and there might be some bugs. To install it, you need to get it from
+here (GitHub). This is under heavy development, so use at your own risks.
 
 Please note that this package may not work very well on Windows. It is developed
 and tested on Linux, and probably works on Mac.
@@ -29,7 +29,7 @@ package.
 ````
 install.packages("devtools")
 library(devtools)
-install_github("fmichonneau/seqManagement")
+install_github("fmichonneau/chopper")
 ````
 
-More details soon.
+More details soon. In the meantime, feel free to open an issue if you have any questions.
