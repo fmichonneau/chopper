@@ -21,6 +21,7 @@ Collate:
     'alg2csv.R'
     'seq.write.nexus.data.R'
     'alg2nex.R'
+    'barMonophyletic.R'
     'checkAmbiguity.R'
     'checkInternalGaps.R'
     'chopper-package.R'

@@ -2,6 +2,7 @@
 
 export(alg2csv)
 export(alg2nex)
+export(barMonophyletic)
 export(checkAmbiguity)
 export(checkInternalGaps)
 export(cleanSeqLabels)
