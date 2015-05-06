@@ -1,8 +1,8 @@
 
 
-[![Build Status](https://travis-ci.org/fmichonneau/chopper.png?branch=master)](https://travis-ci.org/fmichonneau/chopper.png)
+[![Build Status](https://travis-ci.org/fmichonneau/chopper.png?branch=master)](https://travis-ci.org/fmichonneau/chopper)
+[![Coverage Status](https://coveralls.io/repos/fmichonneau/chopper/badge.svg)](https://coveralls.io/r/fmichonneau/chopper)
 
-Latest Build log: https://travis-ci.org/fmichonneau/chopper
 
 # chopper
 
