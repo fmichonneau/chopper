@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/fmichonneau/chopper.png?branch=master)](https://travis-ci.org/fmichonneau/chopper)
 [![Coverage Status](https://coveralls.io/repos/fmichonneau/chopper/badge.svg)](https://coveralls.io/r/fmichonneau/chopper)
+[![](http://www.r-pkg.org/badges/version/chopper)](http://www.r-pkg.org/pkg/chopper)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/chopper)](http://www.r-pkg.org/pkg/chopper)
 
 
 # chopper
