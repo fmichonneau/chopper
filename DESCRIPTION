@@ -29,6 +29,7 @@ Collate:
     'completeSeqWithGaps.R'
     'concatenateAlignments.R'
     'convertGaps.R'
+    'convertRAxMLedgeLabels.R'
     'cutAlignment.R'
     'dealign.R'
     'expandPartitionInfo.R'
