@@ -45,7 +45,7 @@ concatenateAlignments <- function(pattern, path, output,
                                   partition.format = c("raxml", "nexus"),
                                   create.conc = TRUE,
                                   standardize=FALSE,
-                                  drop, ...) {
+                                  drop = NULL, ...) {
 
     partition.format <- match.arg(partition.format)
     lAlg <- list.files(path = path, pattern = pattern)
@@ -89,7 +89,7 @@ concatenateAlignments <- function(pattern, path, output,
             sizeAlg[i] <- dim(tmpAlg)[2]
         }
         if(create.conc) {
-            if (length(drop)) {
+            if (!is.null(drop)) {
                 toRm <- match(drop, dimnames(firstAlg)[[1]])
                 if (any(is.na(toRm))) {
                     stop("Some of the sequences specified in drop were not found.")

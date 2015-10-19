@@ -6,7 +6,7 @@
 \usage{
 concatenateAlignments(pattern, path, output, input.format = "fasta",
   partition = NULL, partition.format = c("raxml", "nexus"),
-  create.conc = TRUE, standardize = FALSE, drop, ...)
+  create.conc = TRUE, standardize = FALSE, drop = NULL, ...)
 }
 \arguments{
 \item{pattern}{character string to identify aligned files in folder}
