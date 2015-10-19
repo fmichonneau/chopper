@@ -4,6 +4,5 @@
 ##' phylogenetic and population genetic analyses.
 ##'
 ##' @docType package
-##' @import ape
 ##' @name chopper
 NULL
