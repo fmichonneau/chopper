@@ -4,21 +4,26 @@
 \alias{splitAlignment}
 \title{Split alignments.}
 \usage{
-splitAlignment(file, output, format = "fasta", colw = 10000,
-  convertEnds = FALSE, checkAmbiguity = TRUE, checkInternalGaps = FALSE,
-  ...)
+splitAlignment(file, output, split_by = NULL, format = "fasta",
+  colw = 10000, checkAmbiguity = TRUE, checkInternalGaps = FALSE, ...)
 }
 \arguments{
-\item{file}{path and file name of the alignment (all the seq need to be the same length)}
+\item{file}{path and file name of the alignment (all the seq need
+to be the same length)}
 
-\item{output}{folder where the individual sequences will be stored (no trailing /)}
+\item{output}{folder where the individual sequences will be stored}
+
+\item{split_by}{If \code{NULL} (default), each sequence will be a
+in a separate file. Otherwise, a data frame with at least 2
+columns named \sQuote{groups} and \sQuote{sequences}:
+sequences identified in the \sQuote{sequences} column, sharing
+the same values in the \sQuote{groups} column will be written
+to files.}
 
 \item{format}{format of the alignment, for now only fasta}
 
-\item{colw}{width of columns, same as in ape:::write.dna}
-
-\item{convertEnds}{should the extremities of the sequences be
-converted to missing data? (default=FALSE)}
+\item{colw}{width of columns, same as in
+\code{\link[ape]{write.dna}}}
 
 \item{checkAmbiguity}{should the presence of ambiguities in the
 sequences be tested? (default=TRUE). If ambiguities are found,
@@ -32,7 +37,7 @@ warning.}
 }
 \value{
 TRUE if the function succeed, mostly used for its side
-effect (create files with individual sequences).
+    effect (create files with individual sequences).
 }
 \description{
 Split alignments into individual files.
@@ -40,9 +45,8 @@ Split alignments into individual files.
 \details{
 This function takes an alignment and put each sequence into its
 individual file that is named the same as the name of the
-sequence.  Using the option convertEnds requires that you can read
-and write to /tmp. This function also overwrites the output (it
-doesn't check that the file created don't already exist).
+sequence. This function also overwrites the output (it doesn't
+check that the file created don't already exist).
 }
 \author{
 Francois Michonneau
