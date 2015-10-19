@@ -5,7 +5,7 @@
 \title{Remove empty sequences}
 \usage{
 removeEmptySeqs(file, output, formatin = "fasta", formatout = formatin,
-  colsep = "", overwrite = FALSE, gap, ...)
+  colsep = "", overwrite = FALSE, ...)
 }
 \arguments{
 \item{file}{path and file name for a DNA alignment}
@@ -27,8 +27,6 @@ override this to no character, i.e. \code{colsep=""}).}
 
 \item{overwrite}{If no output file is specified and if overwrite is TRUE,
 the original file is overwritten.}
-
-\item{gap}{character in the sequence to be considered as missing data}
 
 \item{...}{additional arguments to be passed to
 \code{\link[ape]{write.dna}}.}
