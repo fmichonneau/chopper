@@ -44,7 +44,7 @@ checkAmbiguity <- function(file, format="fasta", quiet=FALSE, Namb=TRUE,
             lstAmbiguity <- lstAmbiguity[hasAmbiguity]
         }
         res <- mapply(function(isAmb, lstAmb) { names(isAmb) <- lstAmb; isAmb },
-                      isAmbiguity, lstAmbiguity)
+                      isAmbiguity, lstAmbiguity, SIMPLIFY=FALSE)
         if (!quiet) {
             message("There are ambiguities.")
             if (simplify) {
@@ -60,7 +60,7 @@ checkAmbiguity <- function(file, format="fasta", quiet=FALSE, Namb=TRUE,
                 }
             }
         }
-        invisible(res)            
+        invisible(res)
     }
     else integer(0)
 }
