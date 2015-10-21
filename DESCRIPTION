@@ -36,6 +36,7 @@ Collate:
     'fas2phy.R'
     'mergeAlignment.R'
     'mergeSequences.R'
+    'nbases.R'
     'nexusPartitionCreate.R'
     'raxmlPartitionCreate.R'
     'raxmlPartitionInfo.R'
