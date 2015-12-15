@@ -41,5 +41,6 @@ Collate:
     'raxmlPartitionCreate.R'
     'raxmlPartitionInfo.R'
     'removeEmptySeqs.R'
+    'removeFastaComments.R'
     'splitAlignment.R'
     'splitMultiAlignments.R'
