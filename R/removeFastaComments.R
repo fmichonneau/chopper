@@ -7,7 +7,7 @@
 ##'     overwritten, otherwise a file name for the output
 ##' @param ... Additional arguments to be passed to
 ##'     \code{\link[ape]{read.dna}}.
-##' @return \code{TRUE}. Function used for its side effect.
+##' @return The name of the output file
 ##' @author Francois Michonneau
 ##' @export
 removeFastaComments <- function(file, output = NULL, ...) {
@@ -21,5 +21,5 @@ removeFastaComments <- function(file, output = NULL, ...) {
     if (is.null(output)) output <- file
 
     ape::write.dna(alg, file = output, format = "fasta", colsep = "", colw = 10000)
-    TRUE
+    output
 }
