@@ -24,7 +24,8 @@ mergeAlignment <- function(listFiles, output, seqFolder) {
     owd <- getwd()
     setwd(seqFolder)
     for (i in 1:length(listFiles)) {
-        tmpXX <- scan(file=listFiles[i], what="character", sep="\n")
+        tmpXX <- scan(file=listFiles[i], what="character", sep="\n",
+                      quiet = TRUE)
         cat(tmpXX, sep="\n", file=output, append=TRUE)
     }
     setwd(owd)
