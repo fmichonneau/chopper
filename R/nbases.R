@@ -13,7 +13,7 @@
 ##' @author Francois Michonneau
 ##' @export
 nbase <- function(file, gap="-", format="fasta", ...) {
-    alg <- ape::read.dna(file=file, format="fasta", as.character=TRUE, ...)
+    alg <- ape::read.dna(file=file, format=format, as.character=TRUE, ...)
     lgt <- apply(alg, 1, function(x) {
         .seq <- gsub(gap, "", paste0(x,collapse=""))
         nchar(.seq)
