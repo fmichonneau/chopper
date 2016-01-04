@@ -10,6 +10,7 @@
 ##' @return The name of the output file
 ##' @author Francois Michonneau
 ##' @export
+##' @importFrom ape read.dna write.dna
 removeFastaComments <- function(file, output = NULL, ...) {
 
     if (!file.exists(file))
