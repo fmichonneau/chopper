@@ -12,7 +12,7 @@
 ##' @return TRUE is the function succeed. Used for this side effect
 ##' that creates a new tree where the bootstrap values are assigned to
 ##' nodes.
-##' @author François Michonneau
+##' @author Francois Michonneau
 ##' @export
 convertRAxMLedgeLabels <- function(f, out) {
     eachTr <- scan(f, what="character", sep="\n")

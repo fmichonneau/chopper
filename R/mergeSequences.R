@@ -12,35 +12,33 @@
 ##' that the executables need to be in your PATH.
 ##' @title Merge sequences
 ##' @param listFiles names (vector of character) of the individual
-##' sequence files to be merged.
+##'     sequence files to be merged.
 ##' @param output folder where the write the output files. If the
-##' folder doesn't exist, the user is asked whether it should be
-##' created.
+##'     folder doesn't exist, the user is asked whether it should be
+##'     created.
 ##' @param seqFolder the folder that contains the individual files
-##' being stored in their own folders.
+##'     being stored in their own folders.
 ##' @param markers the list of markers to be used to build the
-##' alignemnt. They need to match the subfolders found in
-##' \sQuote{seqFolder}
+##'     alignemnt. They need to match the subfolders found in
+##'     \sQuote{seqFolder}
 ##' @param convertEnds Should the gaps at the extremities of the
-##' sequences be replaced by missing data?
+##'     sequences be replaced by missing data?
 ##' @param checkAmbiguity Should the sequences be checked for
-##' ambiguities before merging?
+##'     ambiguities before merging?
 ##' @param gblocks If different from NULL, gblocks should be a named
-##' list with the marker as its names and the parameters to be passed
-##' to Gblocks as its values. This function assumes that the extension
-##' of the file created by Gblocks is \sQuote{-gb} so you don't want
-##' to use the \sQuote{-e=} flag.
+##'     list with the marker as its names and the parameters to be
+##'     passed to Gblocks as its values. This function assumes that
+##'     the extension of the file created by Gblocks is \sQuote{-gb}
+##'     so you don't want to use the \sQuote{-e=} flag.
 ##' @param gapchar Characters to be used to create empty sequences for
-##' files that are not sequenced for a given marker.
+##'     files that are not sequenced for a given marker.
 ##' @param justCheck If FALSE, no alignment is created.
-##' @param returnData If TRUE, a data frame that contains TRUE/FALSE
-##' indicating whether a particular extraction (element of listFiles)
-##' is found for each of the markers.
 ##' @return Mostly used for its side effect of creating alignment for
-##' a list of extractions, given a list of markers. If returnData is
-##' TRUE, it also returns a data frame that includes which extraction
-##' has been sequenced for which marker.
-##' @author François Michonneau
+##'     a list of extractions, given a list of markers. Invisibly
+##'     returns a data frame that includes which extraction has been
+##'     sequenced for which marker, with as attributes the file names
+##'     created.
+##' @author Francois Michonneau
 ##' @export
 mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
                      markers=c("16S", "16Sc"), convertEnds=TRUE,
