@@ -43,7 +43,7 @@
 mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
                      markers=c("16S", "16Sc"), convertEnds=TRUE,
                      checkAmbiguity=TRUE, gblocks=NULL, gapchar="?",
-                     justCheck=FALSE, returnData=TRUE) {
+                     justCheck=FALSE) {
 
     if (any(duplicated(listFiles))) {
         stop("duplicated sequence names: ",
@@ -96,6 +96,8 @@ mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
         allSeq <- union(allSeq, tmpFiles)
     }
 
+    resAlgFile <- resAlgOut <- character(length(markers))
+
     for (j in 1:length(markers)) {
         seqNo <- character(0)
         algName <- paste(timeAlg, markers[j], sep="-")
@@ -134,6 +136,8 @@ mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
         if (length(existSeq) == 0) stop("no sequence for ", markers[j])
         if (length(existSeq) <= 3) warning("Less than 3 sequences for: ", markers[j])
         if (!justCheck) {
+            resAlgFile[j] <- algFile
+            resAlgOut[j] <- algOut
             cmdMuscle <- paste("muscle -in ", algFile, " -out ", algOut, sep="")
             system(cmdMuscle)
             if (!is.null(gblocks) && markers[j] %in% names(gblocks)) {
@@ -167,6 +171,8 @@ mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
             }
         }
     }
-    if (returnData)
-        as.data.frame(summarySeq)
+    res <- as.data.frame(summarySeq)
+    attr(res, "unaligned_files") <- resAlgFile
+    attr(res, "aligned_files") <- resAlgOut
+    invisible(res)
 }
