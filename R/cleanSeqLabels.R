@@ -41,7 +41,7 @@
 ##' exDNA <- read.dna(file="/tmp/testAlg.phy", format="seq")
 ##' dimnames(exDNA)[[1]][3] <- "F \t [G]"
 ##' dimnames(exDNA)[[1]][5] <- "I I' J\""
-##' exDNA <- cleanSeqLabels(xx, software="RAxML")
+##' exDNA <- cleanSeqLabels(exDNA, software="RAxML")
 ##' attr(exDNA, "oldnames")
 ##' }
 ##' @export
@@ -49,7 +49,7 @@
 cleanSeqLabels <- function(alg, pattern=NULL, software="RAxML",
                            replaceWith="") {
     if (is.null(pattern)) {
-        software <- match.arg(software)    
+        software <- match.arg(software)
         if (identical(software, "RAxML")) {
             pattern <- ":|,|\\(|\\)|;|\\[|\\]|\\'|\\s|\t"
         }
