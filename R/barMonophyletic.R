@@ -13,36 +13,37 @@
 ##' displayed next to the vertical bars.
 ##' @title barMonophyletic
 ##' @param groupLabel a vector of mode \code{character} that indicates
-##' the labels for each of the monophyletic group.
+##'     the labels for each of the monophyletic group.
 ##' @param groupMatch a vector of mode \code{character} that contains
-##' a way to identify each of the monophyletic clade. The function
-##' \code{\link{grep}} is used for this process.
+##'     a way to identify each of the monophyletic clade. The function
+##'     \code{\link{grep}} is used for this process.
 ##' @param tree a phylogenetic tree a \code{phylo} object.
-##' @param cex.plot the \code{\link[par]{cex}} (in \code{par}) value
-##' for plotting the tree.
-##' @param cex.text the \code{\link[par]{cex}} (in \code{par}) value
-##' for the text next to the vertical bars.
+##' @param cex.plot the \code{cex} (in \code{\link[graphics]{par}})
+##'     value for plotting the tree.
+##' @param cex.text the \code{cex} (in \code{\link[graphics]{par}}) value
+##'     for the text next to the vertical bars.
 ##' @param include.tip.label should the tip labels be displayed on the
-##' tree? (default is FALSE)
+##'     tree? (default is FALSE)
 ##' @param extra.space amount of extra space (additive)
 ##' @param coef.space amount of space (multiplicative)
 ##' @param draw should a plot be produce? (default is TRUE)
 ##' @param text.offset how much space to add between the vertical bar
-##' and the text.
+##'     and the text.
 ##' @param font type of font to be used for the text next to the
-##' vertical bars.
+##'     vertical bars.
 ##' @param font.col color of the font to be used for the text next to
-##' the vertical bars.
+##'     the vertical bars.
 ##' @param seg.col color of the vertical bar.
-##' @param srt the string rotation in degrees (see
-##' \code{see \code{srt} in \link[graphics]{par}}) of the text next to the
-##' vertical bars.
+##' @param srt the string rotation in degrees (see see \code{srt} in
+##'     \link[graphics]{par}) of the text next to the vertical bars.
 ##' @param bar.at.tips should the vertical bars be plotted right next
-##' to the tips? (default FALSE)
-##' @return Function mostly used for its side effect of plotting a phylogeny
-##' but it also returns invisibly the total width of the tree.
+##'     to the tips? (default FALSE)
+##' @return Function mostly used for its side effect of plotting a
+##'     phylogeny but it also returns invisibly the total width of the
+##'     tree.
 ##' @export
 ##' @author Francois Michonneau
+##' @importFrom ape branching.times
 barMonophyletic <- function(groupLabel, groupMatch, tree, cex.plot, cex.text=.8,
                             include.tip.label=FALSE, extra.space=0, coef.space=1,
                             draw=TRUE, text.offset=1.02, font=1, font.col=1,
@@ -61,7 +62,7 @@ barMonophyletic <- function(groupLabel, groupMatch, tree, cex.plot, cex.text=.8,
 
   findMaxWidth <- function(tr, grpLbl, cex.plot, include.tip.label) {
     offLabel <- ifelse(include.tip.label, strwidth(tr$tip.label, cex=cex.plot), 0)
-    max(branching.times(tr)) + extra.space + offLabel
+    max(ape::branching.times(tr)) + extra.space + offLabel
   }
 
   grpID <- vector("list", length(groupLabel))
