@@ -19,10 +19,10 @@ a way to identify each of the monophyletic clade. The function
 
 \item{tree}{a phylogenetic tree a \code{phylo} object.}
 
-\item{cex.plot}{the \code{\link[par]{cex}} (in \code{par}) value
-for plotting the tree.}
+\item{cex.plot}{the \code{cex} (in \code{\link[graphics]{par}})
+value for plotting the tree.}
 
-\item{cex.text}{the \code{\link[par]{cex}} (in \code{par}) value
+\item{cex.text}{the \code{cex} (in \code{\link[graphics]{par}}) value
 for the text next to the vertical bars.}
 
 \item{include.tip.label}{should the tip labels be displayed on the
@@ -45,16 +45,16 @@ the vertical bars.}
 
 \item{seg.col}{color of the vertical bar.}
 
-\item{srt}{the string rotation in degrees (see
-\code{see \code{srt} in \link[graphics]{par}}) of the text next to the
-vertical bars.}
+\item{srt}{the string rotation in degrees (see see \code{srt} in
+\link[graphics]{par}) of the text next to the vertical bars.}
 
 \item{bar.at.tips}{should the vertical bars be plotted right next
 to the tips? (default FALSE)}
 }
 \value{
-Function mostly used for its side effect of plotting a phylogeny
-but it also returns invisibly the total width of the tree.
+Function mostly used for its side effect of plotting a
+    phylogeny but it also returns invisibly the total width of the
+    tree.
 }
 \description{
 puts vertical bars next to monophyletic clades in a tree.

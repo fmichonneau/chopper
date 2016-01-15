@@ -6,7 +6,7 @@
 \usage{
 mergeSeq(listFiles, output, seqFolder = "~/Documents/seqRepository",
   markers = c("16S", "16Sc"), convertEnds = TRUE, checkAmbiguity = TRUE,
-  gblocks = NULL, gapchar = "?", justCheck = FALSE, returnData = TRUE)
+  gblocks = NULL, gapchar = "?", justCheck = FALSE)
 }
 \arguments{
 \item{listFiles}{names (vector of character) of the individual
@@ -30,25 +30,22 @@ sequences be replaced by missing data?}
 ambiguities before merging?}
 
 \item{gblocks}{If different from NULL, gblocks should be a named
-list with the marker as its names and the parameters to be passed
-to Gblocks as its values. This function assumes that the extension
-of the file created by Gblocks is \sQuote{-gb} so you don't want
-to use the \sQuote{-e=} flag.}
+list with the marker as its names and the parameters to be
+passed to Gblocks as its values. This function assumes that
+the extension of the file created by Gblocks is \sQuote{-gb}
+so you don't want to use the \sQuote{-e=} flag.}
 
 \item{gapchar}{Characters to be used to create empty sequences for
 files that are not sequenced for a given marker.}
 
 \item{justCheck}{If FALSE, no alignment is created.}
-
-\item{returnData}{If TRUE, a data frame that contains TRUE/FALSE
-indicating whether a particular extraction (element of listFiles)
-is found for each of the markers.}
 }
 \value{
 Mostly used for its side effect of creating alignment for
-a list of extractions, given a list of markers. If returnData is
-TRUE, it also returns a data frame that includes which extraction
-has been sequenced for which marker.
+    a list of extractions, given a list of markers. Invisibly
+    returns a data frame that includes which extraction has been
+    sequenced for which marker, with as attributes the file names
+    created.
 }
 \description{
 Creates a set of alignments for given a list of extractions and
@@ -66,6 +63,6 @@ access MUSCLE and Gblocks with the command system(), this means
 that the executables need to be in your PATH.
 }
 \author{
-François Michonneau
+Francois Michonneau
 }
 

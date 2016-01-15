@@ -28,6 +28,6 @@ a little regular expression to assign the boostrap values to the
 nodes. It might not always work, use with caution.
 }
 \author{
-François Michonneau
+Francois Michonneau
 }
 
