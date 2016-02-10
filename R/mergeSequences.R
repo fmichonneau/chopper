@@ -21,8 +21,6 @@
 ##' @param markers the list of markers to be used to build the
 ##'     alignemnt. They need to match the subfolders found in
 ##'     \sQuote{seqFolder}
-##' @param convertEnds Should the gaps at the extremities of the
-##'     sequences be replaced by missing data?
 ##' @param checkAmbiguity Should the sequences be checked for
 ##'     ambiguities before merging?
 ##' @param gblocks If different from NULL, gblocks should be a named
@@ -41,7 +39,7 @@
 ##' @author Francois Michonneau
 ##' @export
 mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
-                     markers=c("16S", "16Sc"), convertEnds=TRUE,
+                     markers=c("16S", "16Sc"),
                      checkAmbiguity=TRUE, gblocks=NULL, gapchar="?",
                      justCheck=FALSE) {
 
@@ -157,9 +155,6 @@ mergeSeq <- function(listFiles, output, seqFolder="~/Documents/seqRepository",
                     warning("There are some abiguities in your alignment:",
                             algOut)
                 }
-            }
-            if (convertEnds) {
-                convertEndsToMissingAlg(algOut, algOut)
             }
             algSeq <- read.dna(file=algOut, format="fasta")
             lAlg <- dim(algSeq)[2]

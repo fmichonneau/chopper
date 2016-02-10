@@ -5,8 +5,8 @@
 \title{Merge sequences}
 \usage{
 mergeSeq(listFiles, output, seqFolder = "~/Documents/seqRepository",
-  markers = c("16S", "16Sc"), convertEnds = TRUE, checkAmbiguity = TRUE,
-  gblocks = NULL, gapchar = "?", justCheck = FALSE)
+  markers = c("16S", "16Sc"), checkAmbiguity = TRUE, gblocks = NULL,
+  gapchar = "?", justCheck = FALSE)
 }
 \arguments{
 \item{listFiles}{names (vector of character) of the individual
@@ -22,9 +22,6 @@ being stored in their own folders.}
 \item{markers}{the list of markers to be used to build the
 alignemnt. They need to match the subfolders found in
 \sQuote{seqFolder}}
-
-\item{convertEnds}{Should the gaps at the extremities of the
-sequences be replaced by missing data?}
 
 \item{checkAmbiguity}{Should the sequences be checked for
 ambiguities before merging?}
