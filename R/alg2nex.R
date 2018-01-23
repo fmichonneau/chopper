@@ -8,7 +8,7 @@
 ##' append partition information at the end of the alignment. The
 ##' partition information has to be written in the NEXUS format and be
 ##' provided in a separate file.
-##' 
+##'
 ##' @title Converts from PHYLIP or FASTA format to NEXUS format.
 ##' @param file file in phylip format (\code{format="sequential"}) or
 ##' in fasta format (\code{format="fasta"})
